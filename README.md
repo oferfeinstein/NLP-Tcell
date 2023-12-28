@@ -24,10 +24,8 @@ Information Extraction Model: Employing an OpenIE model to extract structured in
 4. Database Construction
 Database Creation: Building a structured database from the extracted information for easy access and utilization in integrative modeling tasks.
 
-Supervisors:
-Dr. Barak Raveh
-Dr. Gabriel Stanovsky
+Supervisors: Dr. Barak Raveh & Dr. Gabriel Stanovsky
 
-Conclusion
+Conclusion:
 This project serves as a comprehensive initiative to leverage NLP techniques for the purpose of information extraction in the domain of T-cell activation.
 By utilizing vast amounts of scientific literature, the aim is to contribute to the facilitation of integrative modeling and research in immunology.
