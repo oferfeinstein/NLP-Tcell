@@ -1,4 +1,4 @@
-# Integrative Modeling of T-cell Activation Using NLP
+# NLP Information Extraction for T-cell Activation Modeling
 
 This project aims to develop an information extraction pipeline utilizing Natural Language Processing (NLP) techniques for integrative modeling of T-cell activation.
 The project encompasses data preparation, processing, model fine-tuning, and database construction from an extensive dataset comprising millions of scientific papers.
