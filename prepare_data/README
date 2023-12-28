@@ -1,7 +1,4 @@
-Author: Ofer Feinstein
-Last updated after: Dec 27, 2020
-
-===== Filtering the corpus ====
+# Corpus filtering
 
 (1) Downloading the corpus from semantic scholar (http://s2-public-api-prod.us-west-2.elasticbeanstalk.com/corpus/)  which includes all literature papers. First I unzip all the gz files using the commanf gunzip *.gz > new_file, then I grouped all the jsonl files into one file, using the command cat * > big_corpus.jsonl
 The new jsonl included 193,331,048 lines.
