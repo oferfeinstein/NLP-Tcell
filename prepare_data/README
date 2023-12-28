@@ -1,0 +1,28 @@
+Author: Ofer Feinstein
+Last updated after: Dec 27, 2020
+
+===== Filtering the corpus ====
+
+(1) Downloading the corpus from semantic scholar (http://s2-public-api-prod.us-west-2.elasticbeanstalk.com/corpus/)  which includes all literature papers. First I unzip all the gz files using the commanf gunzip *.gz > new_file, then I grouped all the jsonl files into one file, using the command cat * > big_corpus.jsonl
+The new jsonl included 193,331,048 lines.
+
+(2) Using the filter_articles_to_fields.py file, I counterd how many files exist in each field.
+
+(3) Choosing relevant fields: Biology, Chemistry, Computer Science, Mathematics, Physics, Materials Science, Medicine
+
+(4) Filtering the corpus using the filter_relevant_feilds.py, after running this code only the papers that belong to the fields above will remain. 
+The new filter corpus jsonl included 95,954,831 lines (the files is called "filter_corpus.jsonl").
+
+(5) Filtering the corpus using general keywords, using the command: grep -i -e interactions -e histocompatibility -e "T-cell" -e immunology -e affinity -e "TCR" -e CD4 -e CD8 -e MHC -e HLA -e "human leukocyte antigen" -e "on rate" -e "off rate" -e SPR -e "Surface Plasmon Resonance" -e KD -e "K(D)" -e kon -e koff -e "k(on)" -e "k(off)" -e "K(on)" -e "K(off)" -e "dissociation rate" -e "association rate" -e antigen -e apecificty -e "T-cell receptor" -e "T cell receptor" -e kd -e "k(d)" -e immune -e leukocyte -e binding -e "protein-protein interactions" -e "peptide-protein interactions" -e PPI -e "T-cell receptor clustering" -e "TCR clustering" -e "T cell receptor clustering" -e "molecular patterning" -e antagonists -e agonists -e "pmid:'[\d].*'" filter_corpus.jsonl > filter_by_keywords.jsonl
+The new filter by keywords corpus included 34,189,407 lines.
+
+(6) Filtering by general keywords: TCR, MHC, CD3, CD8, CD4 (with the same command above but only with these words and from the corpus of step (5)
+number of lines without -i flag: 556,707 (small_corpus.jsonl)
+after filtering only the english papers - filter_english.jsonl, contains 524904 lines. 
+number of lines with -i flag: 26,794,843 (small_corpus_with_i.jsonl)
+
+(7) collecting manually 54 relevant papers and checking how many of them exists in the filter corpus from step (6) - by this commend:
+grep -e '"pmid": "19125887"' -e '"pmid": "19595460"' -e '"pmid": "21451107"' -e '"pmid": "16446170"' -e '"pmid": "25618219"' -e '"pmid": "18767161"' -e '"pmid": "15051516"' -e '"pmid": "22549784"' -e '"pmid": "26060072"' -e '"pmid": "20660617"' -e '"pmid": "19125886"' -e '"pmid": "14976256"' -e '"pmid": "23046120"' -e '"pmid": "25245536"' -e '"pmid": "10352259"' -e '"pmid": "9203420"' -e '"pmid": "10358147"' -e '"pmid": "12152083"' -e '"pmid": "17644531"' -e '"pmid": "30647147"' -e '"pmid": "15187125"' -e '"pmid": "25392532"' -e '"pmid": "8305133"' -e '"pmid": "21841125"' -e '"pmid": "25782169"' -e '"pmid": "16365315"' -e '"pmid": "19698083"' -e '"pmid": "21365321"' -e '"pmid": "10605002"' -e '"pmid": "10358766"' -e '"pmid": "24523505"' -e '"pmid": "10229191"' -e '"pmid": "23046121"' -e '"pmid": "24636916"' -e '"pmid": "19542454"' -e '"pmid": "11172019"' -e '"pmid": "21989928"' -e '"pmid": "9130639"' -e '"pmid": "16087711"' -e '"pmid": "19201651"' -e '"pmid": "12594952"' -e '"pmid": "25392533"' -e '"pmid": "16049493"' -e '"pmid": "21880203"' -e '"pmid": "9200439"' -e '"pmid": "15131131"' -e '"pmid": "8609391"' -e '"pmid": "10202004"' -e '"pmid": "21127503"' -e '"pmid": "27056844"' -e '"pmid": "17442956"' -e '"pmid": "30745330"' -e '"pmid": "32439954"' jsonl_name.jsonl
+Result: In the corpus without -i (small_corpus.jsonl) 53 papers was found.
+Next, running the same grep on the filter by keywords corpus from step (5) - result: 53 papers was found.
+Next, running the same grep on the filter corpus from step (4) - result: 53 papers was found. 
