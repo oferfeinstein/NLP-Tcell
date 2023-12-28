@@ -6,7 +6,7 @@ The project encompasses data preparation, processing, model fine-tuning, and dat
 The primary goal of this project is to design and implement an NLP-based pipeline capable of extracting pertinent information from a vast corpus of scientific literature.
 Specifically, the project focuses on T-cell activation, utilizing cutting-edge NLP methodologies to process large-scale data efficiently.
 
-Key Components
+Key Components:
 
 1. Data Preparation and Processing
 Data Collection: Gathering a substantial dataset comprising millions of papers related to T-cell activation.
