@@ -1,0 +1,13 @@
+# BERT fine-tuning
+* Data includes ~1M papers. All of them from step (3) in prepare_data, ~500K from step (6) - labeled as
+relevant by grepping our keywords, the other ~500K were taken from the corpus in step (3), using 'create_corpus.py' which chose ~500K papers
+that are different from the ~500K from step (6) and combine the two sets into one corpus. 
+
+* Labels - a vector with 20 cells, 0-18 for the fields (1 if the paper belongs to the fields, else 0), label 19 is 1 if the paper tagged as
+a relevant papers, else 0.
+model 1 was trained on this data. The LRAP (precision for multi-label): 0.89
+model 2 was train on this data but we removed the keywords from step (6). The LRAP: 0.89
+
+Next, we exmanied the precision only for the relevant/not-relevant label.
+model 1: 0.92
+model 2: 0.91
