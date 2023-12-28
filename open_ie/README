@@ -1,0 +1,8 @@
+* parsed_text.py: Parses and tokenizes abstracts from a JSONL file, generating a new JSONL file with parsed abstracts.
+Implements a ParsedAbstract class to read an input JSONL file, tokenize the abstracts into sentences, and write the processed abstracts to a new JSONL file.
+Accepts an input JSONL file containing abstracts and outputs a new JSONL file with parsed abstracts.
+
+* run_open_ie: Performs Open Information Extraction (OIE) on parsed abstracts, extracting information and storing it in a new JSONL file.
+Employs AllenNLP's pre-trained models for Open Information Extraction tasks on parsed abstracts.
+Processes parsed abstracts from a JSONL file and produces a new JSONL file with the extracted information using AllenNLP's models.
+Takes an input JSONL file with parsed abstracts and outputs a new JSONL file containing extracted information.
